@@ -12,7 +12,7 @@ on:
 
 jobs:
   flutter_test:
-  names: Run Flutter analyze and test
+  name: Run Flutter analyze and test
   runs-on: ubuntu-latest
   steps:
     - uses: actions/checkout@v2
