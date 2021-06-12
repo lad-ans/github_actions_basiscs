@@ -24,15 +24,15 @@ jobs:
         channel: "stable"
     - run: flutter pub get
     - run: flutter analyze 
-    - run: flutter format dry --set-exit-if-changed lib/ // verify if lib folder is fomatted according to flutter pattern
+    - run: flutter format dry --set-exit-if-changed lib/ # verify if lib folder is fomatted according to flutter pattern
     - run: flutter format dry --set-exit-if-changed test/
-    - run: flutter test --coverage // run all tests on the machine
-    - run: flutter test --machine > test-result.json // takes analyzed tests on coverage and give the result to us
+    - run: flutter test --coverage # run all tests on the machine
+    - run: flutter test --machine > test-result.json # takes analyzed tests on coverage and give the result to us
     - uses: dorny/test-reporter@v1.4.2
       with:
-        name: test-results // the test report name
+        name: test-results # the test report name
         path: test-result.json
         reporter: flutter-json
-    - uses: VeryGoodOpenSource/very_good_coverage@v1.1.1 // defines a minimum percentage of our tests
+    - uses: VeryGoodOpenSource/very_good_coverage@v1.1.1 # defines a minimum percentage of our tests
       with:
-        min_coverage: 0 // 0%: if test does not cover 80 percent will fail
+        min_coverage: 0 # 0%: if test does not cover 80 percent will fail
