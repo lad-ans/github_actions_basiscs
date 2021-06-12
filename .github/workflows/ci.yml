@@ -36,7 +36,6 @@
 #     - uses: VeryGoodOpenSource/very_good_coverage@v1.1.1 # defines a minimum percentage of our tests
 #       with:
 #         min_coverage: 0 # 0%: if test does not cover 80 percent will fail
-
 name: CI
 
 on: 
